@@ -1,0 +1,105 @@
+// ====================================================================
+// IT3101 - Data Warehousing and Business Intelligence
+// DAX MEASURES LIBRARY FOR POWER BI (Task 7)
+// Star Schema: fact_order_sales_fulfillment and Conformed Dimensions
+// ====================================================================
+
+// --------------------------------------------------------------------
+// 1. CORE EXECUTIVE KPIs (Report Page 1)
+// --------------------------------------------------------------------
+
+// Gross Merchandise Value (GMV) excluding freight
+Total GMV := 
+SUM(fact_order_sales_fulfillment[item_price])
+
+// Total Sales Value including customer shipping fee
+Total Revenue with Freight := 
+SUM(fact_order_sales_fulfillment[total_item_value])
+
+// Total unique customer orders placed
+Total Orders := 
+DISTINCTCOUNT(fact_order_sales_fulfillment[order_id])
+
+// Total individual items/units sold
+Total Items Sold := 
+COUNTROWS(fact_order_sales_fulfillment)
+
+// Average Order Value (Basket Size)
+Average Order Value (AOV) := 
+DIVIDE([Total Revenue with Freight], [Total Orders], 0)
+
+// Average Customer Satisfaction Review Rating (1.0 to 5.0)
+Average Review Score := 
+AVERAGE(fact_order_sales_fulfillment[review_score])
+
+// --------------------------------------------------------------------
+// 2. LOGISTICS & FULFILLMENT METRICS (Report Pages 1, 2, 3)
+// --------------------------------------------------------------------
+
+// Average customer delivery lead time in calendar days
+Average Delivery Days := 
+AVERAGE(fact_order_sales_fulfillment[delivery_duration_days])
+
+// Average difference between actual delivery and estimated SLA date (days)
+Average Delivery Delay vs Estimate := 
+AVERAGE(fact_order_sales_fulfillment[delivery_delay_days])
+
+// Number of line items delivered on or before the estimated delivery date
+On-Time Deliveries := 
+CALCULATE(
+    COUNTROWS(fact_order_sales_fulfillment),
+    fact_order_sales_fulfillment[delivery_delay_days] <= 0
+)
+
+// On-time delivery SLA compliance percentage
+On-Time Delivery Rate % := 
+DIVIDE([On-Time Deliveries], COUNTROWS(fact_order_sales_fulfillment), 0)
+
+// Total delayed order deliveries
+Delayed Deliveries := 
+CALCULATE(
+    COUNTROWS(fact_order_sales_fulfillment),
+    fact_order_sales_fulfillment[delivery_delay_days] > 0
+)
+
+// Percentage of shipments suffering delays
+Delayed Delivery Rate % := 
+DIVIDE([Delayed Deliveries], COUNTROWS(fact_order_sales_fulfillment), 0)
+
+// Average freight shipping cost per item
+Average Freight Cost := 
+AVERAGE(fact_order_sales_fulfillment[freight_value])
+
+// Total freight revenue collected
+Total Freight Cost := 
+SUM(fact_order_sales_fulfillment[freight_value])
+
+// Percentage of total basket value consumed by shipping fee
+Average Freight Ratio % := 
+AVERAGE(fact_order_sales_fulfillment[freight_ratio]) * 100
+
+// --------------------------------------------------------------------
+// 3. TIME INTELLIGENCE & TREND MEASURES (Report Page 2)
+// --------------------------------------------------------------------
+
+// GMV for the previous month (Month-over-Month calculation)
+GMV Previous Month := 
+CALCULATE(
+    [Total GMV],
+    PREVIOUSMONTH(dim_date[full_date])
+)
+
+// Percentage GMV growth vs previous month
+MoM GMV Growth % := 
+DIVIDE(
+    [Total GMV] - [GMV Previous Month],
+    [GMV Previous Month],
+    0
+)
+
+// Year-to-Date (YTD) Total GMV
+YTD GMV := 
+TOTALYTD(
+    [Total GMV],
+    dim_date[full_date]
+)

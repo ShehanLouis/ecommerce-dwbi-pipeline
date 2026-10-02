@@ -1,0 +1,33 @@
+{
+  "country": "Brazil",
+  "data_source_description": "Brazilian Institute of Geography and Statistics (IBGE) Federative Units & Macro-Regions Metadata",
+  "states": {
+    "AC": {"state_name": "Acre", "capital": "Rio Branco", "macro_region": "North", "logistics_zone": "Remote North"},
+    "AL": {"state_name": "Alagoas", "capital": "Maceió", "macro_region": "Northeast", "logistics_zone": "Coastal Northeast"},
+    "AP": {"state_name": "Amapá", "capital": "Macapá", "macro_region": "North", "logistics_zone": "Remote North"},
+    "AM": {"state_name": "Amazonas", "capital": "Manaus", "macro_region": "North", "logistics_zone": "Remote North"},
+    "BA": {"state_name": "Bahia", "capital": "Salvador", "macro_region": "Northeast", "logistics_zone": "Coastal Northeast"},
+    "CE": {"state_name": "Ceará", "capital": "Fortaleza", "macro_region": "Northeast", "logistics_zone": "Coastal Northeast"},
+    "DF": {"state_name": "Distrito Federal", "capital": "Brasília", "macro_region": "Central-West", "logistics_zone": "Central Hub"},
+    "ES": {"state_name": "Espírito Santo", "capital": "Vitória", "macro_region": "Southeast", "logistics_zone": "Core Southeast"},
+    "GO": {"state_name": "Goiás", "capital": "Goiânia", "macro_region": "Central-West", "logistics_zone": "Central Hub"},
+    "MA": {"state_name": "Maranhão", "capital": "São Luís", "macro_region": "Northeast", "logistics_zone": "Inland Northeast"},
+    "MT": {"state_name": "Mato Grosso", "capital": "Cuiabá", "macro_region": "Central-West", "logistics_zone": "Agricultural Interior"},
+    "MS": {"state_name": "Mato Grosso do Sul", "capital": "Campo Grande", "macro_region": "Central-West", "logistics_zone": "Agricultural Interior"},
+    "MG": {"state_name": "Minas Gerais", "capital": "Belo Horizonte", "macro_region": "Southeast", "logistics_zone": "Core Southeast"},
+    "PA": {"state_name": "Pará", "capital": "Belém", "macro_region": "North", "logistics_zone": "Inland North"},
+    "PB": {"state_name": "Paraíba", "capital": "João Pessoa", "macro_region": "Northeast", "logistics_zone": "Coastal Northeast"},
+    "PR": {"state_name": "Paraná", "capital": "Curitiba", "macro_region": "South", "logistics_zone": "Core South"},
+    "PE": {"state_name": "Pernambuco", "capital": "Recife", "macro_region": "Northeast", "logistics_zone": "Coastal Northeast"},
+    "PI": {"state_name": "Piauí", "capital": "Teresina", "macro_region": "Northeast", "logistics_zone": "Inland Northeast"},
+    "RJ": {"state_name": "Rio de Janeiro", "capital": "Rio de Janeiro", "macro_region": "Southeast", "logistics_zone": "Core Southeast"},
+    "RN": {"state_name": "Rio Grande do Norte", "capital": "Natal", "macro_region": "Northeast", "logistics_zone": "Coastal Northeast"},
+    "RS": {"state_name": "Rio Grande do Sul", "capital": "Porto Alegre", "macro_region": "South", "logistics_zone": "Core South"},
+    "RO": {"state_name": "Rondônia", "capital": "Porto Velho", "macro_region": "North", "logistics_zone": "Inland North"},
+    "RR": {"state_name": "Roraima", "capital": "Boa Vista", "macro_region": "North", "logistics_zone": "Remote North"},
+    "SC": {"state_name": "Santa Catarina", "capital": "Florianópolis", "macro_region": "South", "logistics_zone": "Core South"},
+    "SP": {"state_name": "São Paulo", "capital": "São Paulo", "macro_region": "Southeast", "logistics_zone": "Primary Logistics Hub"},
+    "SE": {"state_name": "Sergipe", "capital": "Aracaju", "macro_region": "Northeast", "logistics_zone": "Coastal Northeast"},
+    "TO": {"state_name": "Tocantins", "capital": "Palmas", "macro_region": "North", "logistics_zone": "Inland North"}
+  }
+}

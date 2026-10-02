@@ -1,0 +1,61 @@
+# ==========================================
+# E-Commerce DWBI Pipeline - .gitignore
+# ==========================================
+
+# Database files (Exceeds GitHub 100MB limit; auto-generated via run_pipeline.py)
+*.db
+*.sqlite
+*.sqlite3
+olist_dw.db
+
+# Large raw & processed data files (Auto-downloaded/generated via run_pipeline.py)
+data/raw/*.csv
+data/raw/extraction_summary.json
+data/processed/*.csv
+powerbi/exports/*.csv
+
+# Retain directory structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!powerbi/exports/.gitkeep
+!data/external/brazil_regions_metadata.json
+
+# Python caches & build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
